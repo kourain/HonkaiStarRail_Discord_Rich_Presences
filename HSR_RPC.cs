@@ -7,7 +7,7 @@ namespace HSR_Discord_RPC
     class HSR_RPC
     {
         private static readonly string game = "launcher";
-        private static readonly string token = "1098657418218586174";
+        private static readonly string token = "1117169565508567150";
 
         private static readonly DiscordRpcClient client = new(token);
         private static readonly RichPresence presence = new()
@@ -15,9 +15,7 @@ namespace HSR_Discord_RPC
             Assets = new Assets()
             {
                 LargeImageText = "Honkai: Star Rail",
-                LargeImageKey = "starrail",
-                SmallImageText = "Honkai: Star Rail",
-                SmallImageKey = "starrail",
+                LargeImageKey = "logohsr",
             }
         };
         private async static void RPCStart()
@@ -35,7 +33,7 @@ namespace HSR_Discord_RPC
 
             Console.WriteLine(account["detailInfo"]["nickname"]);
             presence.Timestamps = Timestamps.Now;
-            presence.Details = $"IGN: {account["detailInfo"]["nickname"]} | Lv: {account["detailInfo"]["level"]} | Achv: {account["detailInfo"]["recordInfo"]["achievementCount"]}";
+            presence.Details = $"IGN: {account["detailInfo"]["nickname"]} | UID: {uuid} | Lv: {account["detailInfo"]["level"]}";
             presence.State = $"Signature: {account["detailInfo"]["signature"]}";
             /*presence.Buttons = new Button[] {
                 new Button() { Label = "HoYoLab Profile", Url = $"https://www.hoyolab.com/accountCenter/postList?id={HSR_Reg.HoyolabId}" },

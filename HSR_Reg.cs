@@ -18,7 +18,7 @@ namespace HSR_Discord_RPC
             return hoyolabid;
             while (hoyolabid == "")
                 hoyolabid = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Cognosphere\Star Rail",
-                    "App_LastUserID_h2841727341", "").ToString();
+                    "", "").ToString();
         }
     }
 }
