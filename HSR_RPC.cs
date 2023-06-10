@@ -33,8 +33,8 @@ namespace HSR_Discord_RPC
 
             Console.WriteLine(account["detailInfo"]["nickname"]);
             presence.Timestamps = Timestamps.Now;
-            presence.Details = $"IGN: {account["detailInfo"]["nickname"]} | UID: {uuid} | Lv: {account["detailInfo"]["level"]}";
-            presence.State = $"Signature: {account["detailInfo"]["signature"]}";
+            presence.Details = $"IGN: {account["detailInfo"]["nickname"]}";
+            presence.State = $"UID: {uuid} | Lv: {account["detailInfo"]["level"]}";
             /*presence.Buttons = new Button[] {
                 new Button() { Label = "HoYoLab Profile", Url = $"https://www.hoyolab.com/accountCenter/postList?id={HSR_Reg.HoyolabId}" },
             };*/
