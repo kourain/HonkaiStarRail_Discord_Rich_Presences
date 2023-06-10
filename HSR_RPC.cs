@@ -6,7 +6,7 @@ namespace HSR_Discord_RPC
 {
     class HSR_RPC
     {
-        private static readonly string game = "launcher";
+        private static readonly string game = "StarRail";
         private static readonly string token = "1117169565508567150";
 
         private static readonly DiscordRpcClient client = new(token);
