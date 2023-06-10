@@ -1,7 +1,7 @@
 
 # How it work
 
-![image](https://github.com/kourain/HonkaiStarRail_Discord_RPC/assets/85356599/67688741-7c0a-4d35-bd38-bb9f2b43160a)
+![image](https://github.com/kourain/HonkaiStarRail_Discord_RPC/assets/85356599/1d7b643d-418a-4843-89a7-e7ee7a51d384)
 
 It is made to work automatically, requires you to log in to the game first
 Read only UID through registry, no game changer, no 3rd-party software
