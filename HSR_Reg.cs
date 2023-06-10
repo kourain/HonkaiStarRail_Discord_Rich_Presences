@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace HSRRichPresence.Discord
+namespace HSR_Discord_RPC
 {
     class HSR_Reg
     {
@@ -16,6 +16,9 @@ namespace HSRRichPresence.Discord
         {
             string hoyolabid = "";
             return hoyolabid;
-        }    
+            while (hoyolabid == "")
+                hoyolabid = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Cognosphere\Star Rail",
+                    "App_LastUserID_h2841727341", "").ToString();
+        }
     }
 }
