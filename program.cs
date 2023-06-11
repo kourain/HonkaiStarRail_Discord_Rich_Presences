@@ -1,6 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
 namespace HSR_Discord_RPC
 {
     internal static class Program
@@ -8,9 +6,11 @@ namespace HSR_Discord_RPC
         [STAThread]
         static void Main()
         {
-
+            string hoyolabid = "";
+            if (File.Exists("cfg.txt"))
+                hoyolabid = File.ReadAllText("cfg.txt");
             Process[] old = Process.GetProcessesByName("HSR_Discord_RPC");
-            foreach(var temp  in old)
+            foreach(var temp in old)
             {
                 if(temp.Id != Process.GetCurrentProcess().Id)
                 {
@@ -19,7 +19,7 @@ namespace HSR_Discord_RPC
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            main mainform = new main();
+            main mainform = new main(ref hoyolabid);
             Application.Run();
         }
     }

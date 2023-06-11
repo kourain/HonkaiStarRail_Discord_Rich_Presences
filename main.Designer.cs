@@ -44,7 +44,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(320, 200);
             ControlBox = false;
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;

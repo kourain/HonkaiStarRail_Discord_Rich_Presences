@@ -1,14 +1,14 @@
 ﻿using DiscordRPC;
 using System.Diagnostics;
 using Newtonsoft.Json.Linq;
-
 namespace HSR_Discord_RPC
 {
     class HSR_RPC
     {
-        private static readonly string game = "StarRail";
-        private static readonly string token = "1117169565508567150";
-
+        //private const string game = "launcher";
+        private const string game = "StarRail";
+        private const string token = "1117169565508567150";
+        private static string hoyolabid = "";
         private static readonly DiscordRpcClient client = new(token);
         private static readonly RichPresence presence = new()
         {
@@ -28,17 +28,24 @@ namespace HSR_Discord_RPC
             {
                 return;
             }
-            //Console.WriteLine(content);
-            var account = JObject.Parse(content);
-
-            Console.WriteLine(account["detailInfo"]["nickname"]);
-            presence.Timestamps = Timestamps.Now;
-            presence.Details = $"IGN: {account["detailInfo"]["nickname"]}";
-            presence.State = $"UID: {uuid} | Lv: {account["detailInfo"]["level"]}";
-            /*presence.Buttons = new Button[] {
-                new Button() { Label = "HoYoLab Profile", Url = $"https://www.hoyolab.com/accountCenter/postList?id={HSR_Reg.HoyolabId}" },
-            };*/
-
+            try
+            {
+                var account = JObject.Parse(content);
+                presence.Timestamps = Timestamps.Now;
+                presence.Details = $"IGN: {account["detailInfo"]["nickname"]}";
+                presence.State = $"UID: {uuid} | Lv: {account["detailInfo"]["level"]}";
+                if (hoyolabid.ToLower() != "hide")
+                {
+                    presence.Buttons = new DiscordRPC.Button[] {
+                        new DiscordRPC.Button() { Label = "HoYoLab Profile", Url = $"https://www.hoyolab.com/accountCenter/postList?id={hoyolabid}"},
+                        new DiscordRPC.Button() { Label = "Battle Chronicle", Url = $"https://act.hoyolab.com/app/community-game-records-sea/index.html?bbs_presentation_style=fullscreen&bbs_auth_required=true&gid=2&user_id={hoyolabid}&utm_source=hoyolab&utm_medium=gamecard&bbs_theme=dark&bbs_theme_device=1#/hsr" },
+                    };
+                }
+            }
+            catch
+            {
+                return;
+            }
             client.SetPresence(presence);
         }
 
@@ -51,21 +58,22 @@ namespace HSR_Discord_RPC
             }
         }
 
-        public static void Start()
+        public static void Start(object hoyolabidinp)
         {
+            hoyolabid = (hoyolabidinp as string);
             var isRunning = false;
             client.Initialize();
                 
             while (true)
             {
-                Process[] starRail = Process.GetProcessesByName(game);
+                Process[] ProcessList = Process.GetProcessesByName(game);
 
-                if (starRail.Length > 0 && !isRunning)
+                if (ProcessList.Length > 0 && !isRunning)
                 {
                     RPCStart();
                     isRunning = true;
                 }
-                else if (starRail.Length == 0 && isRunning)
+                else if (ProcessList.Length == 0 && isRunning)
                 {
                     Cancel();
                     isRunning = false;

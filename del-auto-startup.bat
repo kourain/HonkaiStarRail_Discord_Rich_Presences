@@ -1,0 +1,1 @@
+reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v HSR_Discord_RPC

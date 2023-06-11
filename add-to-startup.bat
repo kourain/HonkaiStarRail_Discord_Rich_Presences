@@ -1,0 +1,1 @@
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v HSR_Discord_RPC /d %cd%/net6.0/HSR_Discord_RPC.exe

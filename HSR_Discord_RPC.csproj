@@ -16,6 +16,9 @@
     <Version>1.1.0</Version>
     <Authors>Kourain</Authors>
     <Company>Kourain</Company>
+    <IsPublishable>True</IsPublishable>
+    <IncludeSymbols>False</IncludeSymbols>
+    <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -57,6 +60,12 @@
 
   <ItemGroup>
     <PackageReference Include="DiscordRichPresence" Version="1.1.3.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DiscordRPC">
+      <HintPath>DiscordRPC.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

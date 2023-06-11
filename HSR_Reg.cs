@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-
 namespace HSR_Discord_RPC
 {
     class HSR_Reg
@@ -8,17 +7,28 @@ namespace HSR_Discord_RPC
         {
             string UID = "";
             while (UID == "")
+            {     
                 UID = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Cognosphere\Star Rail", "App_LastUserID_h2841727341", "").ToString();
-            //Console.WriteLine(UID);
+            }
             return UID;
         }
-        public static string HoyolabId()
+        public static List<string> HoyolabId()
         {
-            string hoyolabid = "";
-            return hoyolabid;
-            while (hoyolabid == "")
-                hoyolabid = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Cognosphere\Star Rail",
-                    "", "").ToString();
+            List<string> value = new List<string>();
+
+            foreach (string Keyname in Registry.CurrentUser.OpenSubKey(@"Software\Cognosphere\Star Rail").GetValueNames())
+            {
+                if(Keyname.IndexOf("MIHOYOSDK_PROTOCOL_SHOW_FLAG_") == 0)
+                {
+                    string[] temp = Keyname.Substring(29).Split('_');
+                    
+                    if (temp[0] == "1")
+                    {
+                        value.Add(temp[1]);
+                    }
+                }       
+            }
+            return value;
         }
     }
 }
