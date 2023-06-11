@@ -1,7 +1,7 @@
 
 # How it work
 
-![image](https://github.com/kourain/HonkaiStarRail_Discord_RPC/assets/85356599/1d7b643d-418a-4843-89a7-e7ee7a51d384)  ![image](https://github.com/kourain/HonkaiStarRail_Discord_Rich_Presences/assets/85356599/9ea711a0-b8b1-4104-8284-06a8f6ae7f43)
+![image](https://github.com/kourain/HonkaiStarRail_Discord_RPC/assets/85356599/1d7b643d-418a-4843-89a7-e7ee7a51d384)           ![image](https://github.com/kourain/HonkaiStarRail_Discord_Rich_Presences/assets/85356599/9ea711a0-b8b1-4104-8284-06a8f6ae7f43)
 
 It is made to work automatically, requires you to log in to the game first
 Read only ``Game UID`` / ``Hoyolab id`` through registry, no game changer, no 3rd-party software
