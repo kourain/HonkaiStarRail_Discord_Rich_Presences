@@ -30,7 +30,7 @@
 
             //contextmenustrip
             notifyIcon.ContextMenuStrip = new ContextMenuStrip();
-            notifyIcon.ContextMenuStrip.Items.Add("1.1", null, GoToGitClick);
+            notifyIcon.ContextMenuStrip.Items.Add("1.2", null, GoToGitClick);
             notifyIcon.ContextMenuStrip.Items.Add("Hoyolab Profile", null, null);
             (notifyIcon.ContextMenuStrip.Items[1] as ToolStripMenuItem).DropDownItems.Add($"Hide Hoyolab Profile", null, HideHoyolabInfo);
             int count = 1;

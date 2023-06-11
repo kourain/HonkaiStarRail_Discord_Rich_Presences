@@ -13,12 +13,15 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <PackageIcon>NotifyAreaIcon.ico</PackageIcon>
     <Platforms>AnyCPU;x86;x64</Platforms>
-    <Version>1.1.0</Version>
+    <Version>1.2</Version>
     <Authors>Kourain</Authors>
     <Company>Kourain</Company>
     <IsPublishable>True</IsPublishable>
     <IncludeSymbols>False</IncludeSymbols>
     <AnalysisLevel>latest-all</AnalysisLevel>
+    <Title>HSR_Discord_RPC</Title>
+    <Copyright>Kourain</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -97,6 +100,10 @@
 
   <ItemGroup>
     <None Update="assets\NotifyAreaIcon.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
