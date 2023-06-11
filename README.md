@@ -6,7 +6,7 @@
 It is made to work automatically, requires you to log in to the game first
 Read only UID through registry, no game changer, no 3rd-party software
 # How to settup
-You can download pre-built or build your own
+You can download binary with https://github.com/kourain/HonkaiStarRail_Discord_Rich_Presences/releases or build with vs2022
 
 ![image](https://github.com/kourain/HonkaiStarRail_Discord_RPC/assets/85356599/fee60462-aee7-4089-9365-1ff8d4696aa0)
 
