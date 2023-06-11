@@ -46,14 +46,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="add-to-startup.bat" />
     <None Remove="assets\BG.jpg" />
+    <None Remove="assets\BG_Backup.jpg" />
+    <None Remove="del-auto-startup.bat" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="add-to-startup.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\BG.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\BG_Backup.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\NotifyAreaIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="del-auto-startup.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
